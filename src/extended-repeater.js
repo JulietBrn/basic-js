@@ -23,6 +23,7 @@ function repeater(str, options) {
   }
   let addArr = new Array(options.additionRepeatTimes).fill(addition).join(`${options.additionSeparator || '|'}`)
   return new Array(options.repeatTimes).fill(str.concat(addArr || '')).join(`${options.separator || '+'}`)
+  // не до конца
 }
 
 module.exports = {
