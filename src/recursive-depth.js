@@ -17,7 +17,16 @@ class DepthCalculator {
     if (!Array.isArray(arr)) {
       return 0;
     }
-    throw new NotImplementedError('Not implemented');
+    let count = 1;
+    let unpackArr = [...arr.map(() => 1)]
+    while(unpackArr.length > 0) {
+      let curr = unpackArr.pop();
+      if (Array.isArray(curr)) {
+        unpackArr.push(...curr.map(() => count + 1));
+        count += 1;
+      }
+    }
+    return count;
   }
 }
 
